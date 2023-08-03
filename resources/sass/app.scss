@@ -6,5 +6,8 @@
 //components
 @import 'nav-bar';
 @import 'layout';
-@import "property-card";
-@import "property-index-grid";
+
+// MVC -> Property
+@import "property/property-card";
+@import "property/property-index-grid";
+@import "property/property-show.scss";

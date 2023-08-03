@@ -15,7 +15,7 @@
             <h1>AirBnb Clone</h1>
         </section>
     </nav>
-    <div class="wrapper">
+    <div class="container">
         @yield('content')
     </div>
 </body>

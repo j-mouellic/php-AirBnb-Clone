@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertyFormRequest;
 use Illuminate\Http\Request;
 use App\Models\Property;
 
 class PropertyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('property.index', [
@@ -17,25 +15,6 @@ class PropertyController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Property $property)
     {
         return view("property.show", [
@@ -43,25 +22,29 @@ class PropertyController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function create()
+    {
+        $property = new Property();
+        return view('property.new', ['property' => $property]);
+    }
+
+    public function store(PropertyFormRequest $request, Property $property)
+    {
+        $property->create($request->validated());
+        // définir la route -> dashboard user
+        return to_route('')->with('success', "Le nouveau bien a été enregistré");
+    }
+
+    public function edit()
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //

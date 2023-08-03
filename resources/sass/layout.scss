@@ -6,8 +6,13 @@
     color: black;
 }
 
-.wrapper{
+.container{
     width: 80%;
     max-width: 1240px;
     margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
 }

@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('home')->controller(PropertyController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/{property}', "show")->name("property.show");
+Route::prefix('/')->group(function () {
+    Route::resource('property', PropertyController::class);
 });
