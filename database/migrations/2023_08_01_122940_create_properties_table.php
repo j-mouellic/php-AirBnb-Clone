@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->integer("bathrooms");
             $table->integer("surface");
             $table->integer("price_per_night");
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

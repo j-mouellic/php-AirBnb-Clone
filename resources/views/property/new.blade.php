@@ -5,7 +5,7 @@
 @section('content')
     <h1>Enregistrer un nouveau bien</h1>
 
-    <form action="{{ route('property.store') }}" method="post">
+    <form action="{{ route('AirBnb.store') }}" method="post">
         @csrf
         <div>
             <label for="title">Titre</label>

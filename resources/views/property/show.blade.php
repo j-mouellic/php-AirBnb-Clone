@@ -26,5 +26,5 @@
             </section>
         </div>
     </section>
-    <a href="{{ route('property.index') }}">Retour à la liste</a>
+    <a href="{{ route('AirBnb.index') }}">Retour à la liste</a>
 @endsection
