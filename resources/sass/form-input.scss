@@ -1,0 +1,16 @@
+input, textarea{
+    padding: 8px;
+    border: 0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.1);
+    margin-top: 0.2rem;
+    width:100%;
+}
+
+.form-input{
+    margin-top: 2rem;
+}
+
+.input-row{
+    display: flex;
+    justify-content: space-between;
+}

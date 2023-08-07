@@ -16,8 +16,8 @@
                 </div>
                 <p>{{ $property->description }}</p>
                 <div class="propertyshow__icons row">
-                    <h3>{{ $property->bedrooms }}</h3>
-                    <h3>{{ $property->bathrooms }}</h3>
+                    <h3>{{ $property->bedrooms }} chambres</h3>
+                    <h3>{{ $property->bathrooms }} salle de bains</h3>
                     <h3>{{ $property->surface }} m²</h3>
                 </div>
                 <div class="propertyshow__adress">
@@ -26,5 +26,5 @@
             </section>
         </div>
     </section>
-    <a href="{{ route('AirBnb.index') }}">Retour à la liste</a>
+    <a href="{{ route('property.index') }}">Retour à la liste</a>
 @endsection

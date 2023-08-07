@@ -15,14 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        Property::factory(50)->create();
         User::factory()->create([
             'name' => "julien",
             'email' => "julien@example.com",
             'password' => bcrypt("0000")
         ]);
+        Property::factory(50)->create();
         Booking::factory(10)->create();
     }
 }

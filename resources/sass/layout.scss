@@ -6,6 +6,11 @@
     color: black;
 }
 
+a{
+    display: block;
+    text-decoration: none;
+}
+
 .container{
     width: 80%;
     max-width: 1240px;
@@ -15,4 +20,19 @@
 .row{
     display: flex;
     justify-content: space-between;
+}
+
+.btn-primary{
+    text-align: center;
+    padding: 1em 2em;
+    background-color: rgb(7, 80, 169);
+    color: white;
+    border-radius: 8px;
+    transition: 0.5s ease;
+    width: 50%;
+}
+
+.btn-primary:hover{
+    background-color: rgb(1, 9, 46);
+    transition: 0.5s ease;
 }

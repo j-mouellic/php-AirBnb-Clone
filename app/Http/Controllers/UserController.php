@@ -10,6 +10,7 @@ class UserController extends Controller
     {
         $user = User::first();
         $bookings = $user->bookings;
-        return view('dashboard', ['bookings' => $bookings]);
+        $properties = $user->properties;
+        return view('dashboard', ['bookings' => $bookings, "properties" => $properties, "user" => $user]);
     }
 }

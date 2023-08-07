@@ -110,6 +110,7 @@ class PropertyFactory extends Factory
             "bathrooms" => rand(1, 3),
             "surface" => rand(120, 450),
             "price_per_night" => rand(100, 500),
+            "user_id" => 1,
         ];
     }
 }

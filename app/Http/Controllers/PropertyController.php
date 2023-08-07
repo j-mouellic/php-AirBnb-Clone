@@ -24,15 +24,25 @@ class PropertyController extends Controller
 
     public function create()
     {
-        $property = new Property();
-        return view('property.new', ['property' => $property]);
+        return view('property.new', ['property' => new Property]);
     }
 
-    public function store(PropertyFormRequest $request, Property $property)
+    public function store(PropertyFormRequest $request)
     {
-        $property->create($request->validated());
-        // définir la route -> dashboard user
-        return to_route('')->with('success', "Le nouveau bien a été enregistré");
+        // $property = Property::create([
+        //     'title' => $request->input('title'),
+        //     'description' => $request->input('description'),
+        //     'bathrooms' => $request->input('bathrooms'),
+        //     'address' => $request->input('address'),
+        //     'home_type' => $request->input('home_type'),
+        //     'bedrooms' => $request->input('bedrooms'),
+        //     'postal_code' => $request->input('postal_code'),
+        //     'price_per_night' => $request->input('price_per_night'),
+        //     'surface' => $request->input('surface'),
+        //     'city' => $request->input('city'),
+        // ]);
+        $property = Property::create($request->validated());
+        return to_route("property.show", $property)->with('success', "Le nouveau bien a été enregistré");
     }
 
     public function edit()
