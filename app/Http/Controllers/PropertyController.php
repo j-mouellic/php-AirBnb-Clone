@@ -29,30 +29,19 @@ class PropertyController extends Controller
 
     public function store(PropertyFormRequest $request)
     {
-        // $property = Property::create([
-        //     'title' => $request->input('title'),
-        //     'description' => $request->input('description'),
-        //     'bathrooms' => $request->input('bathrooms'),
-        //     'address' => $request->input('address'),
-        //     'home_type' => $request->input('home_type'),
-        //     'bedrooms' => $request->input('bedrooms'),
-        //     'postal_code' => $request->input('postal_code'),
-        //     'price_per_night' => $request->input('price_per_night'),
-        //     'surface' => $request->input('surface'),
-        //     'city' => $request->input('city'),
-        // ]);
         $property = Property::create($request->validated());
         return to_route("property.show", $property)->with('success', "Le nouveau bien a été enregistré");
     }
 
-    public function edit()
+    public function edit(Property $property)
     {
-        //
+        return view('property.new', ["property" => $property]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(Property $property, PropertyFormRequest $request)
     {
-        //
+        $property->update($request->validated());
+        return to_route("property.show", $property)->with('success', 'La modification du bien est enregistrée');
     }
 
     public function destroy(string $id)

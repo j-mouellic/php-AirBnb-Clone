@@ -1,18 +1,19 @@
 @extends('layout')
 
-@section('title', 'Nouveau Bien')
+@section('title', $property->exists ? 'Éditer un bien' : 'Créer un bien')
 
 @section('content')
-    <h1>Enregistrer un nouveau bien</h1>
+    <h1>@yield('title')</h1>
 
     <a href="{{ route('user.dashboard') }}">dashboard</a>
 
-    <form action="{{ route('property.store') }}" method="post">
+    <form action="{{ route($property->exists ? 'property.update' : 'property.store', $property) }}" method="post">
         @csrf
+        @method($property->exists ? 'patch' : 'post')
         @include('components.input', [
             'label' => 'Titre',
             'db_name' => 'title',
-            'value' => 'title',
+            'value' => $property->title,
         ])
         @include('components.input', [
             'label' => 'Type de bien',
@@ -65,6 +66,12 @@
                 'value' => $property->postal_code,
             ])
         </div>
-        <input type="submit" value="envoyer">
+        <button type="submit">
+            @if ($property->exists)
+                Modifier
+            @else
+                Créer
+            @endif
+        </button>
     </form>
 @endsection
