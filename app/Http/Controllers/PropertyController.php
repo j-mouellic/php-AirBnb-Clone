@@ -44,8 +44,9 @@ class PropertyController extends Controller
         return to_route("property.show", $property)->with('success', 'La modification du bien est enregistrée');
     }
 
-    public function destroy(string $id)
+    public function destroy(Property $property)
     {
-        //
+        $property->delete();
+        return to_route('user.dashboard')->with('success', 'Le bien a été supprimé');
     }
 }

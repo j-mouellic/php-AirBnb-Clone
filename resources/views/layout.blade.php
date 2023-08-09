@@ -14,6 +14,16 @@
         <section class="nav-zone">
             <h1>AirBnb Clone</h1>
         </section>
+        @guest
+            <a href="{{ route('loginForm') }}" class="btn-primary">Se connecter</a>
+        @endguest
+        @auth
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                @method('delete')
+                <button>Se déconnecter</button>
+            </form>
+        @endauth
     </nav>
     <div class="container">
         @if (session('success'))

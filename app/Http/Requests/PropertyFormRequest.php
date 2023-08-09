@@ -29,6 +29,7 @@ class PropertyFormRequest extends FormRequest
             "bathrooms" => ["required"],
             "surface" => ["required"],
             "price_per_night" => ["required"],
+            "user_id" => ["required"]
         ];
     }
 }

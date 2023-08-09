@@ -36,3 +36,35 @@ a{
     background-color: rgb(1, 9, 46);
     transition: 0.5s ease;
 }
+
+.btn-danger{
+    text-align: center;
+    padding: 1em 2em;
+    background-color: rgb(165, 5, 5);
+    color: white;
+    border-radius: 8px;
+    transition: 0.5s ease;
+    width: 50%;
+}
+
+.btn-danger:hover{
+    background-color: rgb(54, 2, 2);
+    transition: 0.5s ease;
+}
+
+.alert{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert-success{
+    background-color: #3df08b;
+    color: #134903;
+}
+
+.alert-danger{
+    background-color: #e84040;
+    color: #490303;
+}
